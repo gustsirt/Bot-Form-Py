@@ -23,3 +23,15 @@ async def read_sheet():
   
   values = result.get("values", [])
   return {"rows": values}
+
+
+# @app.get("/sheet")
+# async def read_sheet():
+#     values = get_from_sheet("TPREGUNTAS")  # o tu Config.CONFIG_SHEET
+#     return {"data": values}
+
+# @app.post("/sheet")
+# async def write_sheet():
+#     new_row = ["Juan", "Pérez", "juan@mail.com"]  # simulado
+#     message = add_to_sheet(new_row)
+#     return {"message": message}
