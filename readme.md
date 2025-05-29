@@ -1,5 +1,6 @@
 1 - instalar dependencias:
   * pip install fastapi 
-  * pip install python-dotenv
+  * ENV: python-dotenv
+  * GOOGLE: google-api-python-client google-auth google-auth-oauthlib
 
 2 - correr : fastapi dev main.py
