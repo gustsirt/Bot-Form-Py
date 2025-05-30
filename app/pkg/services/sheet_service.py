@@ -1,4 +1,4 @@
-from google_client import get_google_sheets_client
+from app.pkg.services.google_client import get_google_sheets_client
 from app.config.env import Config
 
 # ✍️ Agrega una fila al Sheet en modo append.
