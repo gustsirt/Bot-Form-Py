@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.config.env import Config
 
 from app.pkg.services.google_client import get_google_sheets_client
+from app.pkg.services.sheet_service import get_from_sheet, add_to_sheet
 
 app = FastAPI()
 
@@ -25,13 +26,13 @@ async def read_sheet():
   return {"rows": values}
 
 
-# @app.get("/sheet")
-# async def read_sheet():
-#     values = get_from_sheet("TPREGUNTAS")  # o tu Config.CONFIG_SHEET
-#     return {"data": values}
+@app.get("/sheet")
+async def read_sheet():
+    values = get_from_sheet("TPREGUNTAS")  # o tu Config.CONFIG_SHEET
+    return {"data": values}
 
-# @app.post("/sheet")
-# async def write_sheet():
-#     new_row = ["Juan", "Pérez", "juan@mail.com"]  # simulado
-#     message = add_to_sheet(new_row)
-#     return {"message": message}
+@app.post("/sheet")
+async def write_sheet():
+    new_row = ["Juan", "Pérez", "juan@mail.com"]  # simulado
+    message = add_to_sheet(new_row)
+    return {"message": message}
