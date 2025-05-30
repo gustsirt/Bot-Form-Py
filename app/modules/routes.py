@@ -1,12 +1,19 @@
-# app/modules/router.py
+# app/modules/routes.py
 
 from fastapi import APIRouter
 from app.config.env import Config
+from app.modules.routes.views import router as views_router
 from app.pkg.services.google_client import get_google_sheets_client
 from app.pkg.services.sheet_service import get_from_sheet, add_to_sheet
 
 router = APIRouter()
 
+
+# ✅ Montar vistas
+router.include_router(views_router)
+
+
+# ✅ API endpoints
 @router.get("/")
 async def root(): 
     return {
